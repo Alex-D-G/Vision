@@ -1,1 +1,1 @@
-# Vision
+Waarom heb deze paper gekozen?
