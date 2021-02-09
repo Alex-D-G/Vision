@@ -11,8 +11,7 @@ def GreyExceptRed(image):
             if 0.1 < hsv_img[:, :, 0][x][y] < 0.9:
                 hsv_img[:, :, 1][x][y] = 0.0
 
-    newImage = hsv2rgb(hsv_img)
-    histoFromImage(newImage)
+    histoFromImage(hsv_img)
 
 
 def histoFromImage(plot_image):
@@ -22,13 +21,14 @@ def histoFromImage(plot_image):
 
     histo.hist(hue_img.ravel(), 50)
     histo.set_title("Histogram of the Hue channel")
-    img.imshow(plot_image)
+    img.imshow(hsv2rgb(plot_image))
     img.set_title("Used image")
     plt.show()
 
 
 image = io.imread('colorfull.jpg')
 
-histoFromImage(rgb2hsv(image))
+image_tmp = rgb2hsv(image)
+histoFromImage(image_tmp)
 
 GreyExceptRed(image)
