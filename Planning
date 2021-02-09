@@ -1,0 +1,20 @@
+Planning
+Wat moet er gedaan worden:
+-Data verzamelen: ei foto’s
+Er is al een set ei foto’s gemaakt de onderzoekers, deze ga ik ook gebruiken voor mijn eigen replicatiestudie
+ 
+-Experiment 1: Ei onderscheiden van achtergrond
+Om te bepalen wat de massa is van de eieren moeten we ze wel kunnen onderscheiden van de achtergrond, dit wordt gedaan met een computer vision algoritme.
+ 
+-Experiment 2: Omtrek van individuele eieren vinden
+Nu we een simpele image hebben van de eieren moeten we nog de borders van de eieren vinden om zo de individuele eieren uit elkaar te houden. Dit kan weer opgelost worden met computer vision . 
+
+-Experiment 3: volume van individuele eieren bepalen
+Nu de omtrek bekent is kan de inhoud van de eieren worden bepaald.
+ 
+Wanneer moet het gedaan worden:
+Aangezien het nog lastig voor mij is in te schatten hoe lang alles gaat duren omdat ik pas een week aan dit vak heb gewerkt gaat de planning heel losjes gebeuren:
+Experiment 1	Week 3-4
+Experiment 2	Week 4-5
+Experiment 3	Week 5-6
+ 
