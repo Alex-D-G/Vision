@@ -3,23 +3,42 @@ Planning:
 Wat moet er gedaan worden:
 
 -Data verzamelen: ei foto’s
-Er is al een set ei foto’s gemaakt de onderzoekers, deze ga ik ook gebruiken voor mijn eigen replicatiestudie
+   - Er is al een set ei foto’s gemaakt de onderzoekers, deze ga ik ook gebruiken voor mijn eigen replicatiestudie
+   - Naast deze foto's maakt de studie ook gebruik van depth foto's voor het detecteren van individuele eieren, 
+     deze worden alleen niet gedeeld en daardoor kan ik dus geen gebruik van maken.
  
 -Experiment 1: Ei onderscheiden van achtergrond
-Om te bepalen wat de massa is van de eieren moeten we ze wel kunnen onderscheiden van de achtergrond, dit wordt gedaan met een computer vision algoritme.
+   - Om te bepalen wat de massa is van de eieren moeten we ze wel kunnen onderscheiden van de achtergrond, dit wordt in de studie op deze manier gedaan:
+       1. De depth image wordt gebruikt om de eiren van de achtergrond te onderscheiden (Ik neem aan dat ze naar de kleur verscheel kijken)
+       2. Er worden een "5 by 5 pixel zero-mean Gaussian kernel filter" toegepast om de image te smoothen
+       3. Vervolgens wordt er een "morphological opening operation" toegepast om eventuele gaten uit de image te halen
+       
+   - Aangezien ik geen toegang heb tot de depth images kan ik alleen maar gebruik maken van de normale foto's die wel gegeven zijn 
+      (Deze images zijn overigens wel van lage kwaliteit rond de 200x130 pixels, ik heb AI upscaling geprobeerd met gemixde resultaten en heb daarom gekozen om voornu te werken met deze kwaliteit)
+      
+   - Ik heb op deze manier de eieren van de achtergrond onderscheden:
+       1. Open de image en zet het om naar een HSV
+       2. Loop door de value channel van de image en kijk of de value tussen 0,1 en 0,3 ligt
+       3. Zo ja: Kleur het blue
+       4. Zo nee: Kleur het rood
+       
+   - De resulterende images zijn niet geweldig in vergelijking tot de studie mede door de lage kwaliteit van het origineel en de ruwheid van de methode maar het geeft een werkbaar resultaat
  
 -Experiment 2: Omtrek van individuele eieren vinden
-Nu we een simpele image hebben van de eieren moeten we nog de borders van de eieren vinden om zo de individuele eieren uit elkaar te houden. 
-Dit kan weer opgelost worden met computer vision . 
+   - Nu we een simpele image hebben van de eieren moeten we nog de borders van de eieren vinden om zo de individuele eieren uit elkaar te houden, dit wordt in de studie op deze manier gedaan:
+       - (Ik snap op het moment nog weinig van deze stappen, waardoor ik dit experiment nog niet heb kunnen afmaken. Ik aangekomende les hulp vragen bij een docent)
+       1. "Contour pre-processing"
+       2. "Concave and convex points extraction"
+       3. "Split-line extraction"
 
 -Experiment 3: volume van individuele eieren bepalen
-Nu de omtrek bekent is kan de inhoud van de eieren worden bepaald.
+   - Nu de omtrek bekent is kan de inhoud van de eieren worden bepaald.
 
  
 Wanneer moet het gedaan worden:
 Aangezien het nog lastig voor mij is in te schatten hoe lang alles gaat duren omdat ik pas een week aan dit vak heb gewerkt gaat de planning heel losjes gebeuren:
 
 Experiment 1	Week 3-4
-Experiment 2	Week 4-5
-Experiment 3	Week 5-6
+Experiment 2	Week 4-6
+Experiment 3	Week 6-7
  
