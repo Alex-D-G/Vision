@@ -1,4 +1,4 @@
-Waarom heb deze paper gekozen?
+Challenge:
+Maak gebruik van computer vision om te tellen hoeveel eiren zich op een gegeven image bevinden. Dit kan erg handig zijn om eier productie bij te houden in legbatterijen.
 
-Ik had een tijdje lopen zoeken naar een paper wat aan de eisen van de opdracht leek te voldoen, en deze leek dat te zijn.
-Plus, wie houdt er niet van een goed ei?
+Ik ga beginnen met het gebruik van de gegeven dataset van de paper, maar zal kijken of ik later mijn eigen dataset kan creëren
