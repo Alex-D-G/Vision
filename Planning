@@ -17,16 +17,26 @@ Wat moet er gedaan worden:
        2. Er worden een "5 by 5 pixel zero-mean Gaussian kernel filter" toegepast om de image te smoothen
        3. Vervolgens wordt er een "morphological opening operation" toegepast om eventuele gaten uit de image te halen
        
-   - Aangezien ik geen toegang heb tot de depth images kan ik alleen maar gebruik maken van de normale foto's die wel gegeven zijn 
-      (Deze images zijn overigens wel van lage kwaliteit rond de 200x130 pixels, ik heb AI upscaling geprobeerd met gemixde resultaten en heb daarom gekozen om voornu te werken met deze kwaliteit)
-      
-   - Ik heb op deze manier de eieren van de achtergrond onderscheden:
+   - Aangezien ik geen toegang heb tot de depth images kan ik alleen maar gebruik maken van de normale foto's die wel gegeven zijn deze zijn alleen van slechte kwaliteit.
+     Vandaar heb ik besloten zelf een dataset te maken om ervoor te zorgen de kwaliteit van het resultaat niet gelimiteerd wordt door de dataset van de paper.
+   
+   - Ik heb op deze manier de eieren van de achtergrond onderscheden (Oude experiment 1):
        1. Open de image en zet het om naar een HSV
        2. Loop door de value channel van de image en kijk of de value tussen 0,1 en 0,3 ligt
        3. Zo ja: Kleur het blue
        4. Zo nee: Kleur het rood
        
    - De resulterende images zijn niet geweldig in vergelijking tot de studie mede door de lage kwaliteit van het origineel en de ruwheid van de methode maar het geeft een werkbaar resultaat
+   
+   - Ik heb op deze manier de eieren van de achtergrond onderscheden met de nieuw dataset(Improved experiment 1):
+       1. Open de image en verklein het naar 1/4 van de originele grote
+          (Dit heb ik gedaan omdat de foto's van de dataset erg groot zijn 1600x1200 waardoor de code door bijna 2 miljoen pixels zou moet lopen)
+       2. Door de resize is de image lijst van int naar float gegaan. Om er makelijk mee te werken besloot ik het naar een pseudo int lijst te veranderen
+       3. Er wordt vervolgens bij elke pixel gekeken wat het welk percentage rood heeft als je kijkt naart de RGB waardes
+       4. Als dit percentage onder de 140 ligt weet je dat het geen deel uitmaakt van de rode achtergrond en het dus een ei pixel is, deze kleur ik vervolgens cyaan
+       5. Als het percentage zich boven de 140 bevindt kleur ik deze zwart
+       6. Nadat alle pixels behandeld zijn verander ik de image terug naar zijn originele grote
+       7. Voor dat ik hem return zet ik de pseudo int lijst om naar een daadwerklijk int lijst
  
 -Experiment 2: Omtrek van individuele eieren vinden
    - Nu we een simpele image hebben van de eieren moeten we nog de borders van de eieren vinden om zo de individuele eieren uit elkaar te houden, dit wordt in de studie op deze manier gedaan:
