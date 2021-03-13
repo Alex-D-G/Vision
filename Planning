@@ -1,4 +1,8 @@
 Planning:
+(Ik was aan het begin van plan om een replicatie studie te doen maar na een gesprek met Diederik in week 4 bleek dat een aantal 
+van de latere onderdelen van de studie buiten de scope van het vak vielen. Daarom werdt mij aangeraden om het om te zetten naar een challenge)
+
+
 
 Wat moet er gedaan worden:
 
@@ -30,15 +34,11 @@ Wat moet er gedaan worden:
        1. "Contour pre-processing"
        2. "Concave and convex points extraction"
        3. "Split-line extraction"
-
--Experiment 3: volume van individuele eieren bepalen
-   - Nu de omtrek bekent is kan de inhoud van de eieren worden bepaald.
-
  
 Wanneer moet het gedaan worden:
-Aangezien het nog lastig voor mij is in te schatten hoe lang alles gaat duren omdat ik pas een week aan dit vak heb gewerkt gaat de planning heel losjes gebeuren:
 
-Experiment 1	Week 3-4
-Experiment 2	Week 4-6
-Experiment 3	Week 6-7
+Experiment 1	         Week 3-4
+Experiment 1 updaten	   Week 5
+Experiment 2	         Week 6
+Verslag	      Week 7
  
